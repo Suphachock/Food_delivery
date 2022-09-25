@@ -88,7 +88,7 @@ app.use('/auth/', authRouter)
 app.use('/auth/product', productRouter)
 
 // Step 9 - configure the server's port
-app.listen(3000, () => console.log('Server Started'))
+app.listen(process.env.PORT || 3000, () => console.log('Server Started'))
 
 // Error handling
 app.use((err, req, res, next) => {
