@@ -14,6 +14,7 @@ exports.find = (req, res) => {
         }
       })
       .catch(err => {
+        console.log(err)
         res.status(500).send({ message: 'Erro retrieving user with id ' + id })
       })
   } else {
@@ -39,6 +40,7 @@ exports.findProduct = (req, res) => {
         }
       })
       .catch(err => {
+        console.log(err)
         res.status(500).send({ message: 'Erro retrieving user with id ' + id })
       })
   } else {
@@ -101,13 +103,13 @@ exports.update = (req, res) => {
       }
     })
     .catch(err => {
+      console.log(err)
       res.status(500).send({ message: 'Error Update user information' })
     })
 }
 
 exports.delete = (req, res) => {
   const id = req.params.id
-
   User.findByIdAndDelete(id)
     .then(data => {
       if (!data) {
@@ -117,6 +119,7 @@ exports.delete = (req, res) => {
       }
     })
     .catch(err => {
+      console.log(err)
       res.status(500).send({
         message: 'Could not delete User with id=' + id
       })
@@ -125,16 +128,16 @@ exports.delete = (req, res) => {
 
 exports.deleteProduct = (req, res) => {
   const id = req.params.id
-
   Product.findByIdAndDelete(id)
     .then(data => {
       if (!data) {
         res.status(404).send({ message: `Cannot Delete with id ${id}. Maybe id is wrong` })
       } else {
-        res.send(data)
+        res.redirect('back')
       }
     })
     .catch(err => {
+      console.log(err)
       res.status(500).send({
         message: 'Could not delete User with id=' + id
       })
