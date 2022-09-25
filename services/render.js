@@ -29,7 +29,7 @@ exports.homeProduct = (req, res) => {
 
 exports.home = (req, res) => {
   // Make a get request to /api/users
-  axios.get('http://localhost:3000/api/product')
+  axios.get('http://0.0.0.0:3000/api/product')
     .then(function (response) {
       const user = req.session.fullname
       if (user === undefined) {
