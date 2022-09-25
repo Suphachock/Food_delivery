@@ -1,5 +1,5 @@
 ### Test Register
-POST http://localhost:3000/auth/product/new
+POST http://ecommerce125.herokuapp.com:3000/auth/product/new
 Content-Type: application/json
 
 {
@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ### Test Login
-POST http://localhost:3000/auth/login
+POST http://ecommerce125.herokuapp.com:3000/auth/login
 Content-Type: application/json
 
 {
@@ -22,11 +22,11 @@ Content-Type: application/json
 }
 
 ### Update Data
-PATCH http://localhost:3000/subscribers/623aa78235202d1b6eb2518c
+PATCH http://ecommerce125.herokuapp.com:3000/subscribers/623aa78235202d1b6eb2518c
 Content-Type: application/json
 
 {
     "name": "CHOKZZZZ"
 }
 ### Deleted Data
-DELETE http://localhost:3000/subscribers/623aa68135202d1b6eb25178
+DELETE http://ecommerce125.herokuapp.com:3000/subscribers/623aa68135202d1b6eb25178
