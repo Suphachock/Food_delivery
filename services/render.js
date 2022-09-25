@@ -1,8 +1,7 @@
 const axios = require('axios')
-
 exports.homeRoutes = (req, res) => {
   // Make a get request to /api/users
-  axios.get('http://localhost:3000/api/users')
+  axios.get('http://127.0.0.1:3000/api/users')
     .then(function (response) {
       const admin = req.session.fullname
       if (admin === undefined) {
@@ -16,7 +15,7 @@ exports.homeRoutes = (req, res) => {
 
 exports.homeProduct = (req, res) => {
   // Make a get request to /api/users
-  axios.get('http://localhost:3000/api/product')
+  axios.get('http://127.0.0.1:3000/api/product')
     .then(function (response) {
       const admin = req.session.fullname
       if (admin === undefined) {
@@ -30,7 +29,7 @@ exports.homeProduct = (req, res) => {
 
 exports.home = (req, res) => {
   // Make a get request to /api/users
-  axios.get('http://localhost:3000/api/product')
+  axios.get('http://127.0.0.1:3000/api/product')
     .then(function (response) {
       const user = req.session.fullname
       if (user === undefined) {
@@ -53,7 +52,7 @@ exports.home = (req, res) => {
 
 exports.order = (req, res) => {
   // Make a get request to /api/users
-  axios.get('http://localhost:3000/api/order', { params: { id: req.query.id } })
+  axios.get('http://127.0.0.1:3000/api/order', { params: { id: req.query.id } })
     .then(function (response) {
       const user = req.session.fullname
       if (user === undefined) {
@@ -75,7 +74,7 @@ exports.order = (req, res) => {
 
 exports.orderAdmin = (req, res) => {
   // Make a get request to /api/users
-  axios.get('http://localhost:3000/api/orderAdmin', { params: { id: req.query.id } })
+  axios.get('http://127.0.0.1:3000/api/orderAdmin', { params: { id: req.query.id } })
     .then(function (response) {
       const admin = req.session.fullname
       if (admin === undefined) {
@@ -89,7 +88,7 @@ exports.orderAdmin = (req, res) => {
 
 exports.orderView = (req, res) => {
   // Make a get request to /api/users
-  axios.get('http://localhost:3000/api/orderView', { params: { id: req.query.id } })
+  axios.get('http://127.0.0.1:3000/api/orderView', { params: { id: req.query.id } })
     .then(function (response) {
       const admin = req.session.fullname
       if (admin === undefined) {
@@ -102,7 +101,7 @@ exports.orderView = (req, res) => {
 }
 
 exports.update_user = (req, res) => {
-  axios.get('http://localhost:3000/api/users', { params: { id: req.query.id } })
+  axios.get('http://127.0.0.1:3000/api/users', { params: { id: req.query.id } })
     .then(function (userdata) {
       res.render('update_user', { user: userdata.data, msg: req.flash('msg') })
     })
@@ -112,7 +111,7 @@ exports.update_user = (req, res) => {
 }
 
 exports.update_product = (req, res) => {
-  axios.get('http://localhost:3000/api/product', { params: { id: req.query.id } })
+  axios.get('http://127.0.0.1:3000/api/product', { params: { id: req.query.id } })
     .then(function (userdata) {
       res.render('update_product', { product: userdata.data, msg: req.flash('msg') })
     })
